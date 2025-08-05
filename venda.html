@@ -1,0 +1,98 @@
+<script src="js/app.js"></script>
+
+<script type="module" src="js/app.js"></script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar Venda - Sistema de Vendas OO</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Vendas OO</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="clientes.html">Clientes</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="vendas.html">Vendas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container content">
+        <div id="message-area"></div> <div class="card">
+            <h2>Nova Venda</h2>
+            <div class="form-group">
+                <label for="select-cliente">Selecionar Cliente:</label>
+                <select id="select-cliente" class="form-control">
+                    <option value="">Selecione um cliente</option>
+                    </select>
+                <p id="info-cliente-selecionado" style="margin-top: 10px; font-weight: bold;"></p>
+            </div>
+
+            <hr style="margin: 30px 0;">
+
+            <h3>Adicionar Produtos</h3>
+            <div class="form-group" style="display: flex; gap: 15px; align-items: flex-end;">
+                <div style="flex-grow: 1;">
+                    <label for="select-produto">Produto:</label>
+                    <select id="select-produto" class="form-control">
+                        <option value="">Selecione um produto</option>
+                        </select>
+                </div>
+                <div style="width: 120px;">
+                    <label for="quantidade-produto">Quantidade:</label>
+                    <input type="number" id="quantidade-produto" class="form-control" value="1" min="1">
+                </div>
+                <button type="button" id="btn-adicionar-produto" class="button success" style="white-space: nowrap;">Adicionar Item</button>
+            </div>
+
+            <hr style="margin: 30px 0;">
+
+            <h3>Itens da Venda</h3>
+            <ul id="lista-itens-venda" class="list-group">
+                </ul>
+            <p class="total-display" id="total-venda-atual" style="font-size: 1.5rem; font-weight: bold; text-align: right; margin-top: 20px;">Total da Venda: R$ 0.00</p>
+            
+            <div style="text-align: right; margin-top: 20px;">
+                <button type="button" id="btn-finalizar-venda" class="button primary button-lg">Finalizar Venda</button>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 40px;">
+            <h2>Vendas Realizadas</h2>
+            <div class="table-responsive">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID da Venda</th>
+                            <th>Cliente</th>
+                            <th>Data</th>
+                            <th>Qtd. Itens</th>
+                            <th>Total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-vendas-realizadas-body">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2023 Sistema de Vendas OO. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="lib/jquery-3.7.1.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
